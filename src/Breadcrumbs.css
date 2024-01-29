@@ -1,0 +1,29 @@
+/* Styling for breadcrumbs */
+.breadcrumbs {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  color: #555; /* Breadcrumb text color */
+  font-weight: 700;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  opacity: 0.6;
+  color: #333333; /* Breadcrumb link color */
+  transition: color 0.3s ease-in-out; /* Smooth color transition on hover */
+}
+
+.breadcrumbs a:hover {
+  color: #333; /* Slightly darker color on hover */
+}
+
+.breadcrumbs::before {
+  content: "›"; /* Breadcrumb separator (you can use your preferred separator) */
+  margin: 0 10px; /* Spacing between separator and breadcrumb */
+  color: #aaa; /* Separator color */
+}
+.breadcrumb-separator {
+  margin: 1vw;
+}

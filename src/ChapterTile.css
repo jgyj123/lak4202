@@ -1,0 +1,18 @@
+.chapter-tile {
+  background-color: #f3f3f3; /* Light grey background */
+  width: 100%;
+  border: 1px solid #dcdcdc; /* Slight border for definition */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Some padding */
+  margin: 10px; /* Space around each tile */
+  text-align: center; /* Center the text */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  font-size: 20px;
+}
+
+.chapter-tile:hover {
+  transform: translateY(-5px); /* Slightly raise the tile on hover */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25); /* Enhance shadow on hover */
+}

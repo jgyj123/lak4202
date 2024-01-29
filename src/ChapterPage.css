@@ -1,0 +1,118 @@
+.chapter-top {
+  position: relative;
+}
+.chapter-table-container {
+  overflow-x: auto; /* Allows horizontal scrolling if needed */
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.chapter-table {
+  width: 80%;
+  max-width: 100%; /* Ensure table does not overflow its container */
+  border-collapse: collapse;
+  margin: 20px 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.mobile-label {
+  display: none;
+}
+
+.chapter-table th,
+.chapter-table td {
+  text-align: left;
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  word-wrap: break-word; /* Allows long words to break and wrap onto the next line */
+}
+
+.chapter-table th {
+  background-color: #f4f4f4;
+}
+
+/* Styling for the "Learn" button */
+.learn-button {
+  background-color: #3498db; /* Background color */
+  color: #fff; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease-in-out; /* Smooth hover transition */
+
+  /* Optional: Add a subtle box-shadow for an elegant touch */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  right: 10vw;
+  top: 0;
+}
+
+.learn-button:hover {
+  background-color: #2980b9; /* Darker color on hover */
+}
+
+/* Responsive Styling for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+  .chapter-table-container {
+    /* padding: 0; */
+  }
+
+  .chapter-table {
+    margin: 0;
+    margin-top: 4vh;
+  }
+
+  .chapter-table,
+  .chapter-table tbody,
+  .chapter-table tr,
+  .chapter-table td {
+    display: block;
+    width: 100%;
+  }
+  .computer-top-label {
+    border: 0 none !important;
+  }
+  .chapter-table,
+  .chapter-table td {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chapter-table thead {
+    display: none;
+  }
+
+  .chapter-table tr {
+    margin-bottom: 15px;
+  }
+
+  .chapter-table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    word-wrap: break-word; /* Ensure wrapping for smaller screens as well */
+  }
+
+  .chapter-table tr td:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .word {
+    font-size: 25px;
+  }
+  .chapter-table .mobile-label {
+    display: table-cell;
+    text-align: right;
+    font-weight: bold;
+    padding-right: 8px; /* Add spacing between labels and data */
+  }
+  .mobile-label {
+    padding-left: 2vw;
+  }
+}
