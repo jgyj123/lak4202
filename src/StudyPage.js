@@ -8,35 +8,16 @@ const StudyPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showFront, setShowFront] = useState(true);
   const [progress, setProgress] = useState(0);
-  const [interactionState, setInteractionState] = useState({
-    clicked: false,
-    touched: false,
-  });
+  const [flipTriggeredByClick, setFlipTriggeredByClick] = useState(false);
 
   useEffect(() => {
-    const handleKeyPress = (e) => {
-      e.stopPropagation();
-      if (e.key === "ArrowLeft") {
-        handlePrevious();
-        e.preventDefault();
-      } else if (e.key === "ArrowRight") {
-        handleNext();
-        e.preventDefault();
-      } else if ((e.key === " " || e.key === "Spacebar") && !e.repeat) {
-        toggleCard();
-        e.preventDefault();
-      }
-    };
-
+    // Add event listeners for keyboard navigation
     document.addEventListener("keydown", handleKeyPress);
     return () => {
+      // Remove event listeners when component unmounts
       document.removeEventListener("keydown", handleKeyPress);
     };
   }, [currentIndex]);
-
-  useEffect(() => {
-    setProgress((currentIndex + 1) / data.length);
-  }, [currentIndex, data.length]);
 
   if (!state || !state.data) {
     return <div>No data available</div>;
@@ -47,35 +28,44 @@ const StudyPage = () => {
 
   const handleNext = () => {
     if (currentIndex < data.length - 1) {
+      setProgress((currentIndex + 2) / data.length);
       setCurrentIndex(currentIndex + 1);
       setShowFront(true);
-      setInteractionState({ clicked: false, touched: false });
+      setFlipTriggeredByClick(false); // Reset click trigger
     }
   };
 
   const handlePrevious = () => {
     if (currentIndex > 0) {
+      setProgress(currentIndex / data.length);
       setCurrentIndex(currentIndex - 1);
       setShowFront(true);
-      setInteractionState({ clicked: false, touched: false });
+      setFlipTriggeredByClick(false); // Reset click trigger
     }
   };
 
   const toggleCard = () => {
-    if (!interactionState.clicked && !interactionState.touched) {
-      setInteractionState({ ...interactionState, clicked: true });
-      setShowFront(!showFront);
+    if (!showFront) {
+      // Card is already flipped, so flip it back to the front
+      setShowFront(true);
+    } else {
+      // Card is on the front, flip it to the back
+      setShowFront(false);
     }
   };
 
-  const handleTouchEnd = (e) => {
-    e.preventDefault();
+  const handleKeyPress = (e) => {
     e.stopPropagation();
-    if (!interactionState.touched) {
-      setInteractionState({ ...interactionState, touched: true });
-      setShowFront(!showFront);
+    if (e.key === "ArrowLeft") {
+      handlePrevious();
+    } else if (e.key === "ArrowRight") {
+      handleNext();
+    } else if ((e.key === " " || e.key === "Spacebar") && !e.repeat) {
+      toggleCard();
     }
   };
+
+  const progressBar = `${currentIndex + 1}/${data.length}`;
 
   return (
     <div className="study-page">
@@ -83,14 +73,14 @@ const StudyPage = () => {
       <div
         className={`card ${showFront ? "" : "flip"}`}
         onClick={toggleCard}
-        onTouchEnd={handleTouchEnd}
+        onKeyDown={handleKeyPress}
         tabIndex="0"
       >
         <div className="card-content">
           <div className="card-front">{card.Word}</div>
           <div className="card-back">
             <div>{card.Translation}</div>
-            <div>{card.Example}</div>
+            <div> {card.Example}</div>
           </div>
         </div>
       </div>

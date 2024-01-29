@@ -25,5 +25,15 @@
   color: #aaa; /* Separator color */
 }
 .breadcrumb-separator {
-  margin: 2vw;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 600px) {
+  .breadcrumb-separator {
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    font-weight: normal;
+  }
 }
