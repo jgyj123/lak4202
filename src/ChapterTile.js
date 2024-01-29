@@ -12,7 +12,7 @@ const ChapterTile = ({ chapterNumber }) => {
   };
   return (
     <button className="chapter-tile" onClick={handleClick}>
-      <p>
+      <p className="chapter-label">
         <strong>{chapterNumber}</strong> 과
       </p>
     </button>

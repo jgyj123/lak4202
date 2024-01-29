@@ -16,3 +16,7 @@
   transform: translateY(-5px); /* Slightly raise the tile on hover */
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25); /* Enhance shadow on hover */
 }
+
+.chapter-label {
+  color: black;
+}
