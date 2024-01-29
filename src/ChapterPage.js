@@ -20,7 +20,6 @@ const ChapterPage = ({ data }) => {
   return (
     <>
       <div className="chapter-top">
-        {" "}
         <h1>{location.state.chapter + "과"}</h1>
         <button onClick={handleLearnClick} className="learn-button">
           Study Now
@@ -44,12 +43,12 @@ const ChapterPage = ({ data }) => {
                 </td>
                 <p className="mobile-label">Translation:</p>{" "}
                 {/* Label for mobile */}
-                <td className="computer-top-label">
+                <td className="computer-top-label translation">
                   {item.Translation || "-"}
                 </td>
-                <p className="mobile-label">Example:</p>{" "}
+                <p className="mobile-label">{item.Example ? "Example:" : ""}</p>{" "}
                 {/* Label for mobile */}
-                <td>{item.Example || "-"}</td>
+                <td className="example">{item.Example || ""}</td>
               </tr>
             ))}
           </tbody>

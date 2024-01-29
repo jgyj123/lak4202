@@ -1,7 +1,10 @@
 .chapter-top {
-  position: relative;
   display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }
+
 .chapter-table-container {
   overflow-x: auto; /* Allows horizontal scrolling if needed */
   display: flex;
@@ -43,16 +46,21 @@
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s ease-in-out; /* Smooth hover transition */
-
   /* Optional: Add a subtle box-shadow for an elegant touch */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  margin-left: auto;
+  position: absolute;
+  right: 10%;
+  height: 50%;
 }
 
 .learn-button:hover {
   background-color: #2980b9; /* Darker color on hover */
 }
 
+.translation {
+  opacity: 0.8;
+  font-family: sans-serif;
+}
 /* Responsive Styling for screens smaller than 600px */
 @media screen and (max-width: 600px) {
   .chapter-table-container {
@@ -115,5 +123,8 @@
   }
   .mobile-label {
     padding-left: 2vw;
+  }
+  .learn-button {
+    right: 5%;
   }
 }
