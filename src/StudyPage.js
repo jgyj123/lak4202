@@ -69,18 +69,19 @@ const StudyPage = () => {
 
   return (
     <div className="study-page">
-      <h1>{state.chapter + "과"}</h1>
       <div
         className={`card ${showFront ? "" : "flip"}`}
         onClick={toggleCard}
         onKeyDown={handleKeyPress}
         tabIndex="0"
       >
+        <p className="study-title">{state.chapter + "과"}</p>
         <div className="card-content">
           <div className="card-front">{card.Word}</div>
+
           <div className="card-back">
-            <div>{card.Translation}</div>
-            <div> {card.Example}</div>
+            <div className="card-translation">{card.Translation}</div>
+            <div className="card-example"> {card.Example}</div>
           </div>
         </div>
       </div>

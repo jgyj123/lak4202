@@ -4,7 +4,7 @@
   border: 1px solid #dcdcdc; /* Slight border for definition */
   border-radius: 5px; /* Rounded corners */
   padding: 10px 20px; /* Some padding */
-  margin: 10px; /* Space around each tile */
+  margin: 8px; /* Space around each tile */
   text-align: center; /* Center the text */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
   cursor: pointer; /* Pointer cursor on hover */
@@ -19,4 +19,5 @@
 
 .chapter-label {
   color: black;
+  /* font-family: Chivo; */
 }

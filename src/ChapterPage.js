@@ -41,16 +41,11 @@ const ChapterPage = ({ data }) => {
                 <td className="computer-top-label">
                   <strong className="word">{item.Word}</strong>
                 </td>
-                <p className="mobile-label">Translation:</p>{" "}
+
                 {/* Label for mobile */}
                 <td className="computer-top-label translation">
                   {item.Translation || "-"}
                 </td>
-                {item.Example && (
-                  <p className="mobile-label">
-                    {item.Example ? "Example:" : ""}
-                  </p>
-                )}
                 {/* Label for mobile */}
                 <td className="example">{item.Example || ""}</td>
               </tr>

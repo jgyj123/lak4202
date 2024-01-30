@@ -56,6 +56,14 @@
   transform: rotateY(180deg);
   font-size: 1.6em;
 }
+.card-translation {
+  font-weight: 400;
+  opacity: 0.8;
+}
+.card-example {
+  color: gray;
+  font-size: 20px;
+}
 
 .card-navigation {
   display: flex;
@@ -98,6 +106,13 @@
   ); /* Calculate the width based on the progress (e.g., 3/15) */
   background-color: #3498db; /* Color of the progress indicator */
   transition: width 0.3s ease-in-out; /* Smooth transition for the progress indicator */
+}
+.study-title {
+  font-size: 0.6em;
+  position: fixed;
+  right: 8px;
+  top: -8px;
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 600px) {
