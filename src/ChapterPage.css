@@ -106,10 +106,15 @@
     padding: 10px;
     border-bottom: 1px solid #ddd;
     word-wrap: break-word; /* Ensure wrapping for smaller screens as well */
+    padding-bottom: 0;
   }
 
   .chapter-table tr td:last-child {
     margin-bottom: 0;
+  }
+  .example {
+    margin-top: 4px;
+    padding-bottom: 8px !important;
   }
 }
 
