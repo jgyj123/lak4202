@@ -5,3 +5,8 @@
   padding-left: 10%;
   padding-right: 10%;
 }
+
+.loading {
+  display: flex;
+  justify-content: center;
+}
