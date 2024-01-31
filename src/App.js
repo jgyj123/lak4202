@@ -6,6 +6,7 @@ import Homepage from "./Homepage";
 import ChapterPage from "./ChapterPage";
 import StudyPage from "./StudyPage";
 import Breadcrumbs from "./Breadcrumbs";
+import { Analytics } from "@vercel/analytics/react";
 function App() {
   const [data, setData] = useState([]);
   const [chapters, setChapters] = useState([]);
@@ -22,6 +23,7 @@ function App() {
       />
 
       <Router>
+        <Analytics />
         <Breadcrumbs />
         <Routes>
           <Route path="/" element={<Homepage chapters={chapters} />} />
