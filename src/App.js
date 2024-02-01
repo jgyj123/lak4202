@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import FetchCSVData from "./FetchCSVData";
+import FetchTSVData from "./FetchCSVData";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Homepage from "./Homepage";
@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      <FetchCSVData setData={setData} setChapters={setChapters} />
+      <FetchTSVData setData={setData} setChapters={setChapters} />
       <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
         rel="stylesheet"

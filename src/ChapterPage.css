@@ -19,9 +19,7 @@
   border-collapse: collapse;
   margin: 20px 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.mobile-label {
-  display: none;
+  table-layout: fixed; /* Added to ensure column width settings are respected */
 }
 
 .chapter-table th,
@@ -32,11 +30,23 @@
   word-wrap: break-word; /* Allows long words to break and wrap onto the next line */
 }
 
+/* Setting the widths for the columns */
+.chapter-table th:nth-child(1),
+.chapter-table td:nth-child(1),
+.chapter-table th:nth-child(2),
+.chapter-table td:nth-child(2) {
+  width: 30%; /* Adjust if necessary to fit your design */
+}
+
+.chapter-table th:nth-child(3),
+.chapter-table td:nth-child(3) {
+  width: 40%;
+}
+
 .chapter-table th {
   background-color: #f4f4f4;
 }
 
-/* Styling for the "Learn" button */
 .learn-button {
   background-color: #3498db; /* Background color */
   color: #fff; /* Text color */
@@ -46,7 +56,6 @@
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s ease-in-out; /* Smooth hover transition */
-  /* Optional: Add a subtle box-shadow for an elegant touch */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   position: absolute;
   right: 10%;
@@ -61,13 +70,25 @@
   opacity: 0.7;
   font-family: sans-serif;
 }
+
 .example {
   color: gray;
 }
+
 /* Responsive Styling for screens smaller than 600px */
 @media screen and (max-width: 600px) {
   .chapter-table-container {
     /* padding: 0; */
+  }
+  .chapter-table th:nth-child(1),
+  .chapter-table td:nth-child(1),
+  .chapter-table th:nth-child(2),
+  .chapter-table td:nth-child(2) {
+    width: 100%; /* Adjust if necessary to fit your design */
+  }
+  .chapter-table th:nth-child(3),
+  .chapter-table td:nth-child(3) {
+    width: 90%;
   }
 
   .chapter-table {
