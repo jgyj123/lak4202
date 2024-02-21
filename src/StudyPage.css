@@ -115,6 +115,13 @@
   opacity: 0.5;
 }
 
+.circle-button,
+.card:focus, /* Adding focus to card and circle-button for a more general approach */
+.card *:focus {
+  /* Targets any focusable element within .card */
+  outline: none; /* Removes the default outline */
+  box-shadow: 0 0 0 2px #ddd; /* Adds a subtle shadow as a focus indicator */
+}
 @media screen and (max-width: 600px) {
   .card {
     margin-top: 20px;

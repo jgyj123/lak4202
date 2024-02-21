@@ -11,6 +11,12 @@ const StudyPage = () => {
   const [flipTriggeredByClick, setFlipTriggeredByClick] = useState(false);
 
   useEffect(() => {
+    // Ensure the card is showing the front side whenever the currentIndex changes
+    setShowFront(true);
+    // This effect should only trigger when currentIndex changes, not on initial render,
+    // hence not including setShowFront in the dependency array to avoid direct execution.
+  }, [currentIndex]);
+  useEffect(() => {
     // Add event listeners for keyboard navigation
     document.addEventListener("keydown", handleKeyPress);
     return () => {
@@ -28,19 +34,24 @@ const StudyPage = () => {
 
   const handleNext = () => {
     if (currentIndex < data.length - 1) {
-      setProgress((currentIndex + 2) / data.length);
-      setCurrentIndex(currentIndex + 1);
       setShowFront(true);
-      setFlipTriggeredByClick(false); // Reset click trigger
+      setTimeout(() => {
+        setCurrentIndex(currentIndex + 1);
+        setProgress((currentIndex + 2) / data.length);
+        setFlipTriggeredByClick(false); // Reset click trigger
+      }, 150);
     }
   };
 
   const handlePrevious = () => {
     if (currentIndex > 0) {
-      setProgress(currentIndex / data.length);
-      setCurrentIndex(currentIndex - 1);
       setShowFront(true);
-      setFlipTriggeredByClick(false); // Reset click trigger
+
+      setTimeout(() => {
+        setCurrentIndex(currentIndex - 1);
+        setProgress(currentIndex / data.length);
+        setFlipTriggeredByClick(false); // Reset click trigger
+      }, 150); // Adjust this delay as needed
     }
   };
 
