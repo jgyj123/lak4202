@@ -52,19 +52,6 @@ Most of my classmates shared that they decided to study on their mobile phones o
 - Mobile-optimized interface
 - Usage analytics to measure impact
 
-
-## What My Classmates Said
-
-The feedback validated that I'd solved a real problem:
-
-> "This is so convenient and easy to use!" - Classmate A
-
-> "Really helpful for vocabulary practice" - Classmate B
-
-**Areas for improvement they mentioned**:
-- More example sentences (noted for future iterations)
-- Some translations could be more precise (ongoing refinement)
-
 ## What I Learned
 
 ### Technical Skills
